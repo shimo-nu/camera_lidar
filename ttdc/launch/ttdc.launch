@@ -13,7 +13,7 @@
         <param name="frame_id" type="string" value="cam1_link" />
         <remap from="camera/image" to="cam1/image_raw" />
     </node> -->
-    <!-- <node pkg="gscam" type="gscam" name="ipcam1" output="screen">
+    <node pkg="gscam" type="gscam" name="ipcam1" output="screen">
         <param name="camera_name" type="string" value="camera" />
         <param name="camera_info_url" type="string" value="file://$(arg ipcamera1_config_file)" />
         <param name="frame_id" type="string" value="cam1_link" />
@@ -23,10 +23,10 @@
             value='souphttpsrc is-live=1 extra-headers="test,Authorization=\"Basic\ YWRtaW46MTIzNDU=\"" location="http://$(arg camera1_ip)/action/stream?subject=liveplay&amp;stream=0" ! h264parse ! decodebin ! videoconvert' />
         <remap from="camera/image_raw" to="cam1/image_raw" />
         <remap from="camera/image_info" to="cam1/image_info" />
-    </node> -->
-    <!-- <group ns="cam1">
+    </node>
+    <group ns="cam1">
     <node name="ability_rectifier" pkg="image_proc" type="image_proc" output="screen"/>
-    </group> -->
+    </group>
 
     <!-- <node pkg="ipcamera_driver" type="ipcamera_driver" name="ipcam2" output="screen">
         <param name="video_url" type="string" value="rtsp://192.168.3.120:554/live/main" />
@@ -49,8 +49,8 @@
     <node name="ability_rectifier" pkg="image_proc" type="image_proc" output="screen"/>
     </group>
 
-    <!-- <include file="$(find pandar_pointcloud)/launch/pandarXT32.launch">
+    <include file="$(find pandar_pointcloud)/launch/pandarXT32.launch">
         <arg name="device_ip" value="$(arg device_ip)" />
-    </include> -->
+    </include>
     <node pkg="rviz" type="rviz" name="ttdc_rviz" args="-d $(find ttdc)/config/rviz.rviz" />
 </launch>
