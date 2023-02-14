@@ -1,0 +1,26 @@
+image_width: 3840
+image_height: 2160
+camera_name: s3-camera2
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [2347.43212,    0.     , 2009.88022,
+            0.     , 2345.12385, 1055.21685,
+            0.     ,    0.     ,    1.     ]
+camera_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.335225, 0.089063, -0.000035, 0.000542, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1681.27002,    0.     , 2070.81778,    0.     ,
+            0.     , 2159.0188 , 1050.02033,    0.     ,
+            0.     ,    0.     ,    1.     ,    0.     ]

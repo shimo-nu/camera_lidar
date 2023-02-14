@@ -1,18 +1,10 @@
 <launch>
-    <arg name="ipcamera1_config_file" default="$(find ttdc)/config/ost_1.yaml" />
-    <arg name="ipcamera2_config_file" default="$(find ttdc)/config/ost_2.yaml" />
+    <arg name="ipcamera1_config_file" default="$(find ttdc)/config/ost_1-1.yaml" />
+    <arg name="ipcamera2_config_file" default="$(find ttdc)/config/ost_1-2.yaml" />
     <arg name="camera1_ip" default="192.168.2.120"/>
     <arg name="camera2_ip" default="192.168.3.120"/>
     <arg name="device_ip" default="192.168.1.201"/>
-    <arg name="WIDTH" default="3840"/>
-    <arg name="HEIGHT" default="2160"/>
-    <!-- <arg name="FPS" default="10/1"/> -->
-    <node pkg="ipcamera_driver" type="ipcamera_driver" name="ipcam1" output="screen">
-        <param name="video_url" type="string" value="rtsp://192.168.2.120:554/live/main" />
-        <param name="camera_info_url" type="string" value="file://$(arg ipcamera1_config_file)" />
-        <param name="frame_id" type="string" value="cam1_link" />
-        <remap from="camera/image" to="cam1/image_raw" />
-    </node>
+    <arg name="system_ns" default="system_01"/>
     <!-- <node pkg="gscam" type="gscam" name="ipcam1" output="screen">
         <param name="camera_name" type="string" value="camera" />
         <param name="camera_info_url" type="string" value="file://$(arg ipcamera1_config_file)" />
@@ -24,16 +16,16 @@
         <remap from="camera/image_raw" to="cam1/image_raw" />
         <remap from="camera/image_info" to="cam1/image_info" />
     </node> -->
-    <group ns="cam1">
+    <node pkg="ipcamera_driver" type="ipcamera_driver" name="$(arg system_ns)_ipcam1" output="screen">
+        <param name="video_url" type="string" value="rtsp://$(arg camera1_ip):554/live/main" />
+        <param name="camera_info_url" type="string" value="file://$(arg ipcamera1_config_file)" />
+        <param name="frame_id" type="string" value="$(arg system_ns)_cam01_link" />
+        <remap from="camera/image" to="$(arg system_ns)/cam01/image_raw" />
+    </node>
+    <group ns="$(arg system_ns)/cam01">
     <node name="ability_rectifier" pkg="image_proc" type="image_proc" output="screen"/>
     </group>
 
-    <node pkg="ipcamera_driver" type="ipcamera_driver" name="ipcam2" output="screen">
-        <param name="video_url" type="string" value="rtsp://192.168.3.120:554/live/main" />
-        <param name="camera_info_url" type="string" value="file://$(arg ipcamera2_config_file)" />
-        <param name="frame_id" type="string" value="cam2_link" />
-        <remap from="camera/image" to="cam2/image_raw" />
-    </node>
     <!-- <node pkg="gscam" type="gscam" name="ipcam2" output="screen">
         <param name="camera_name" type="string" value="camera" />
         <param name="camera_info_url" type="string" value="file://$(arg ipcamera2_config_file)" />
@@ -45,7 +37,13 @@
         <remap from="camera/image_raw" to="cam2/image_raw" />
         <remap from="camera/image_info" to="cam2/image_info" />
     </node> -->
-    <group ns="cam2">
+    <node pkg="ipcamera_driver" type="ipcamera_driver" name="$(arg system_ns)_ipcam2" output="screen">
+        <param name="video_url" type="string" value="rtsp://$(arg camera2_ip):554/live/main" />
+        <param name="camera_info_url" type="string" value="file://$(arg ipcamera2_config_file)" />
+        <param name="frame_id" type="string" value="$(arg system_ns)_cam02_link" />
+        <remap from="camera/image" to="$(arg system_ns)/cam02/image_raw" />
+    </node>
+    <group ns="$(arg system_ns)/cam02">
     <node name="ability_rectifier" pkg="image_proc" type="image_proc" output="screen"/>
     </group>
 

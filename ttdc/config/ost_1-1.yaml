@@ -1,0 +1,26 @@
+image_width: 3840
+image_height: 2160
+camera_name: s1-camera1
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [2354.45292,    0.     , 1922.42295,
+            0.     , 2348.18032, 1099.79735,
+            0.     ,    0.     ,    1.     ]
+camera_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.343926, 0.093811, -0.003325, -0.001724, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1673.96851,    0.     , 1899.03749,    0.     ,
+            0.     , 2159.37915, 1096.12121,    0.     ,
+            0.     ,    0.     ,    1.     ,    0.     ]
