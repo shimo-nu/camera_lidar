@@ -1,17 +1,17 @@
 image_width: 3840
 image_height: 2160
-camera_name: s2-camera1
+camera_name: camera
 camera_matrix:
   rows: 3
   cols: 3
-  data: [2324.86742,    0.     , 1913.94114,
-            0.     , 2329.85105, 1124.55547,
+  data: [2349.25613,    0.     , 1963.95856,
+            0.     , 2350.14624,  983.64863,
             0.     ,    0.     ,    1.     ]
 camera_model: plumb_bob
 distortion_coefficients:
   rows: 1
   cols: 5
-  data: [-0.333601, 0.087823, -0.001394, 0.002801, 0.000000]
+  data: [-0.327664, 0.083721, 0.000486, 0.001909, 0.000000]
 rectification_matrix:
   rows: 3
   cols: 3
@@ -21,6 +21,6 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [1652.15234,    0.     , 1950.15614,    0.     ,
-            0.     , 2144.56689, 1129.50597,    0.     ,
+  data: [1682.16443,    0.     , 2020.40938,    0.     ,
+            0.     , 2164.802  ,  966.87088,    0.     ,
             0.     ,    0.     ,    1.     ,    0.     ]

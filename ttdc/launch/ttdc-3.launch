@@ -1,6 +1,6 @@
 <launch>
-    <arg name="ipcamera1_config_file" default="$(find ttdc)/config/ost_3-1.yaml" />
-    <arg name="ipcamera2_config_file" default="$(find ttdc)/config/ost_3-2.yaml" />
+    <arg name="ipcamera1_config_file" default="$(find ttdc)/config/ost_3-3.yaml" />
+    <arg name="ipcamera2_config_file" default="$(find ttdc)/config/ost_2-2-1.yaml" />
     <arg name="ipcamera3_config_file" default="$(find ttdc)/config/ost_3-3.yaml" />
     <arg name="camera1_ip" default="192.168.22.120"/>
     <arg name="camera2_ip" default="192.168.23.120"/>
