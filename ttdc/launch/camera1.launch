@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="camera_ip" default="192.168.2.120"/>
+    <arg name="ipcamera_config_file" default="$(find ttdc)/config/ost_1-1.yaml" />
+    <arg name="system_ns" default="system_01"/>
+    <arg name="camera_name" default="cam01"/>
+    <arg name="tf2_ros_node_name" default="camera_to_optical_tf1"/>
+    <arg name="tf2_ros_args" default="0.13 0.075 -0.1 -0.76 -0.01 4.76 pandar cam1_link"/>
+    <include file="$(find ttdc)/launch/camera.launch">
+	<arg name="camera_ip" value="$(arg camera_ip)"/>
+    	<arg name="ipcamera_config_file" value="$(arg ipcamera_config_file)" />
+    	<arg name="system_ns" value="$(arg system_ns)"/>
+    	<arg name="camera_name" value="$(arg camera_name)"/>
+    	<arg name="tf2_ros_node_name" value="$(arg tf2_ros_node_name)"/>
+    	<arg name="tf2_ros_args" value="$(arg tf2_ros_args)"/>
+    </include>
+</launch>

@@ -56,6 +56,7 @@
   <build_export_depend>ipcamera_driver</build_export_depend>
   <exec_depend>pandar_pointcloud</exec_depend>
   <exec_depend>ipcamera_driver</exec_depend>
+  <exec_depend>image_proc</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
