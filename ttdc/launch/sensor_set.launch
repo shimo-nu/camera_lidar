@@ -43,7 +43,7 @@
     	    <param name="sync_sink" type="bool" value="false" />
     	    <!-- <param name="gscam_config" type="string"
     	    value='souphttpsrc is-live=1 extra-headers="test,Authorization=\"Basic\ YWRtaW46MTIzNDU=\"" location="http://$(arg camera1_ip)/action/stream?subject=liveplay&amp;stream=0" ! h264parse ! decodebin ! videoconvert' /> -->
-    	    <param name="gscam_config" type="string" value='rtspsrc location=rtsp://$(arg camera2_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
+    	    <param name="gscam_config" type="string" value='rtspsrc do-rtcp=TRUE location=rtspt://$(arg camera2_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
     	    <remap from="camera/image_raw" to="image_raw" />
     	    <remap from="camera/image_info" to="image_info" />
     	</node>
@@ -59,7 +59,7 @@
     	    <param name="sync_sink" type="bool" value="false" />
     	    <!-- <param name="gscam_config" type="string"
     	    value='souphttpsrc is-live=1 extra-headers="test,Authorization=\"Basic\ YWRtaW46MTIzNDU=\"" location="http://$(arg camera1_ip)/action/stream?subject=liveplay&amp;stream=0" ! h264parse ! decodebin ! videoconvert' /> -->
-    	    <param name="gscam_config" type="string" value='rtspsrc location=rtsp://$(arg camera3_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
+    	    <param name="gscam_config" type="string" value='rtspsrc do-rtcp=TRUE location=rtspt://$(arg camera3_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
     	    <remap from="camera/image_raw" to="image_raw" />
     	    <remap from="camera/image_info" to="image_info" />
     	</node>
@@ -75,7 +75,7 @@
     	    <param name="sync_sink" type="bool" value="false" />
     	    <!-- <param name="gscam_config" type="string"
     	    value='souphttpsrc is-live=1 extra-headers="test,Authorization=\"Basic\ YWRtaW46MTIzNDU=\"" location="http://$(arg camera1_ip)/action/stream?subject=liveplay&amp;stream=0" ! h264parse ! decodebin ! videoconvert' /> -->
-    	    <param name="gscam_config" type="string" value='rtspsrc location=rtsp://$(arg camera4_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
+    	    <param name="gscam_config" type="string" value='rtspsrc do-rtcp=TRUE location=rtspt://$(arg camera4_ip):554/live/main ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert'/>
     	    <remap from="camera/image_raw" to="image_raw" />
     	    <remap from="camera/image_info" to="image_info" />
     	</node>
